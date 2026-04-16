@@ -1,0 +1,17 @@
+#navigation {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(64, 64, 216, 0.863);
+    color: white;
+}
+
+#contact-us {
+    border-radius: 15px;
+    background-color: transparent;
+}
+
+#link-text {
+    color: white;
+    text-decoration: none;
+}

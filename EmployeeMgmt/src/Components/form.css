@@ -1,0 +1,23 @@
+#form-components {
+    border: 2px solid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "firstName lastName";
+
+}
+
+#firstName {
+    grid-area: firstName;
+    color: black;
+
+
+}
+
+#lastName {
+    grid-area: lastName;
+    color: black;
+
+
+}
