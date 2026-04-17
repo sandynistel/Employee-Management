@@ -1,12 +1,25 @@
 #emp_table {
     font-size: 14px;
-    border: 2px solid;
-    border-color: blueviolet;
+    border: none;
+    border-collapse: collapse;
+    /*border-color: blueviolet;*/
     border-radius: 8px;
-    background-color: rgba(137, 43, 226, 0.438);
+    background-color: rgba(174, 119, 226, 0.438);
     width: 70vw;
     margin: 10px auto;
 
+}
 
+#emp_table tbody tr:nth-child(even) {
+    background-color: rgba(137, 43, 226, 0.151);
+}
 
+#emp_table tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+#search-bar {
+    display: flex;
+    justify-content: right;
+    margin-right: 20px;
 }

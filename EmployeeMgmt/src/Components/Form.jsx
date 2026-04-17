@@ -1,48 +1,73 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './form.css'
 
-function Form() {
+function Form({ addEmployee }) {
+
+    const [FormData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        department: '',
+        salary: ''
+    })
+
+    const formValue = (e) => {
+        setFormData({ ...FormData, [e.target.id]: e.target.value });
+    }
+
+    const buttonSubmit = (e) => {
+        e.preventDefault()
+        addEmployee(FormData)
+
+        //clear the form after submission
+        setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            department: '',
+            salary: ''
+        })
+    }
+
+
+
     return (
         <>
-            {/* <div id="search-bar">
-                <input id="emp-search" placeholder='Search' />
-                <button id="search">🔍</button>
-            </div>*/}
 
-            <div id="form-components">
-                <div id="firstName">
-                    <label htmlFor='firstname'>FirstName: </label>
-                    <input id='firstname' type='text' />
+            <form onSubmit={buttonSubmit} id="employeeForm">
+                <div id="form-components">
+                    <div id="firstName">
+                        <label htmlFor='firstname'>First Name: </label>
+                        <input id='firstName' type='text' value={FormData.firstName} onChange={formValue} />
+
+                    </div>
+                    <div id="lastName">
+                        <label htmlFor="lastname">Last Name: </label>
+                        <input id='lastName' type='text' value={FormData.lastName} onChange={formValue} />
+                    </div>
+
+                    <div id="email">
+                        <label htmlFor='email'>Email: </label>
+                        <input id='email' type='email' value={FormData.email} onChange={formValue} />
+                    </div>
+
+                    <div id="department">
+                        <label htmlFor='department'>Deparment: </label>
+                        <input id='department' type='text' value={FormData.department} onChange={formValue} />
+                    </div>
+
+                    <div id="salary">
+                        <label htmlFor='salary'>Salary: </label>
+                        <input id='salary' type='text' value={FormData.salary} onChange={formValue} />
+                    </div>
+
+                    <div id="button">
+                        <button id="btn-submit" type='submit'> SUBMIT </button>
+                    </div>
 
                 </div>
-                <div id="lastName">
-                    <label htmlFor="lastname">LastName: </label>
-                    <input id='lastname' type='text' />
-                </div>
 
-                <div id="email">
-                    <label htmlFor='email'>Email: </label>
-                    <input id='email' type='email' />
-                </div>
-
-                <div id="department">
-                    <label htmlFor='department'>Deparment: </label>
-                    <input id='department' type='email' />
-                </div>
-
-                <div id="salary">
-                    <label htmlFor='salary'>Salary: </label>
-                    <input id='salary' type='text' />
-                </div>
-
-                <div id="button">
-                    <button id="btn-submit"> SUBMIT </button>
-                </div>
-
-
-
-
-            </div>
+            </form>
         </>
     )
 }
