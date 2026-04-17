@@ -12,15 +12,35 @@ function Form() {
             <div id="form-components">
                 <div id="firstName">
                     <label htmlFor='firstname'>FirstName: </label>
-                    <br></br>
                     <input id='firstname' type='text' />
-                    <br></br>
+
                 </div>
                 <div id="lastName">
                     <label htmlFor="lastname">LastName: </label>
-                    <br></br>
                     <input id='lastname' type='text' />
                 </div>
+
+                <div id="email">
+                    <label htmlFor='email'>Email: </label>
+                    <input id='email' type='email' />
+                </div>
+
+                <div id="department">
+                    <label htmlFor='department'>Deparment: </label>
+                    <input id='department' type='email' />
+                </div>
+
+                <div id="salary">
+                    <label htmlFor='salary'>Salary: </label>
+                    <input id='salary' type='text' />
+                </div>
+
+                <div id="button">
+                    <button id="btn-submit"> SUBMIT </button>
+                </div>
+
+
+
 
             </div>
         </>
